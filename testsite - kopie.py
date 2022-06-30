@@ -1,7 +1,7 @@
 from flask import Flask, request 
 import requests
 import time
-
+#api test
 app = Flask(__name__)
 
 def current_milli_time():
@@ -14,7 +14,7 @@ def hello_world():
 
 @app.route("/new")
 def gab():
-    code = request.args.get("code")
+    code = request.args.get("code") 
     get_bear_token = "https://oauth2.googleapis.com/token?code=" + (code) + "&grant_type=authorization_code&client_id=172619765597-m3tnl50li7sv3rpkh8521uggrsabrbs8.apps.googleusercontent.com&client_secret=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&redirect_uri=http://127.0.0.1:5000/new"
 
     post = requests.post(get_bear_token, {})
