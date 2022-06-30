@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h1 class="display-3" style="background-color:yellowgreen">Mijn boekingen</h1>
+</div>
+
+<div class="container">
+<h1 class="text-white";>Hieronder vindt u uw boekingen</h1>
+</div>
+<div class="container" align= "center">
+<div class="jumbotron" align= "left" style = "width: 1300px">
+    
+{% for boeking in alle_boekingen %}
+{% if boeking.Klantid == current_user.username %}
+
+<div class="container">
+    <a class="text-black";>Boekingsnummer {{boeking.id}} | Huisje type {{boeking.Huisjesid}} | Weeknummer {{boeking.Weekid}} | Op naam van: {{current_user.username}} | <a href="/boekformulier/update/{{boeking.id}}">Boeking aanpassen</a> | <a href="/mijnboekingen/delete/{{boeking.id}}">Boeking annuleren </a></a>
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% endblock%}

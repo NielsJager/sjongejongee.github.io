@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% block content %}
+
+
+
+    
+<div class="container">
+
+    
+    <h1 class="display-3" style="background-color:yellowgreen">☀️ Voeg een huisje toe</h1>
+    
+    <form method="POST" class="text-white">
+    {{ form.hidden_tag() }}
+    <br/>{{ form.naam.label }}  {{form.naam() }}
+    <br/>{{ form.prijs.label }} {{form.prijs()}}
+    <br/>{{ form.foto.label }} {{ form.foto() }}
+    <br/>{{ form.omschrijving.label }} {{ form.omschrijving() }}
+    <br/> {{ form.submit() }}
+    </form>
+</div>
+{% endblock%}

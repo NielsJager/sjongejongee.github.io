@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+   
+    <h1 class="display-3" style="background-color:yellowgreen">☀️ Voeg hier een huisje toe</h1>
+    <a href="http://127.0.0.1:5000/admin" style="font-size:20px">Huisje toevoegen</a>
+    <p></p>
+
+
+    
+</div>
+<div class="container">
+<a class="text-white">Alle huisjes:</a>
+</div>
+
+{% for huisje in alle_huisjes %}
+<div class="container">
+    <li class="text-white">{{huisje.id}} {{huisje.naam}} {{huisje.prijs}} {{huisje.foto}} {{huisje.omschrijving}}  <a href="/huisjes/delete/{{huisje.id}}">x</a></li>
+</div>
+   
+{% endfor %}
+{% endblock %}

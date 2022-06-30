@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+   
+    <h1 class="display-3" style="background-color:yellowgreen">Ervaringen</h1>
+    <a href="http://127.0.0.1:5000/uwmening" style="font-size:20px">Laat uw mening achter</a>
+    <p></p>
+</div>
+<div class="container">
+    <h1 class="text-white";>Kom erachter hoe anderen ons park hebben ervaren</h1>
+    </div>
+    <div class="container" align= "center">
+    <div class="jumbotron" align= "left" style = "width: 1300px; background-color: whitesmoke">
+
+{% for contact in alle_opmerkingen %}
+<div class="container">
+    <li class="text-black";> {{contact.naam}} zegt :  {{contact.opmerking}} <a href="/uwmening/update/{{contact.id}}">aanpassen</a> <a href="/ervaringen/delete/{{contact.id}}">x</a></li>
+</div>
+   
+{% endfor %}
+{% endblock %}

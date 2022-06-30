@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{% block content %}
+
+
+
+    
+<div class="container">
+
+    
+    <h1 class="display-3" style="background-color:yellowgreen">Laat uw mening achter</h1>
+    <p class="text-white";>
+        {% if opmerking %}
+        De volgende opmerking is geplaatst {{ opmerking }}.
+        <br>De keuze kan gewijzigd worden in onderstaand formulier:
+        {% else %}
+        In onderstaand formulier kan een opmerking worden geplaatst:
+        {% endif %}
+    </p>
+    <form method="POST" class="text-white";>
+    {{ form.hidden_tag() }}
+    <br/>{{ form.naam.label }}  {{form.naam() }}
+    <br/>{{ form.email.label }} {{form.email()}}
+    <br/>{{ form.opmerking.label }} {{ form.opmerking() }}
+    <br/> {{ form.submit() }}
+    </form>
+    <p></p>
+    <form action="http://127.0.0.1:5000/ervaringen/">
+        <input type="submit" value="Annuleren" />
+    </form>
+</div>
+{% endblock%}

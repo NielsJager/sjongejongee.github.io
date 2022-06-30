@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+    
+<div class="container">
+
+    
+    <h1 class="display-3" style="background-color:yellowgreen">Boek hier </h1>
+<p class="text-white">U bent ingelogd als: {{current_user.username}}</p>  
+<p class="text-white">U hebt gekozen voor: {{huisje.naam}}</p>  
+<img src="{{huisje.foto}}" alt="{{huisje.naam}}" width="600" height="300">
+<div>
+    
+
+<form method="POST" class="text-white";>
+    {{ form.hidden_tag() }}
+    <br/>{{ form.week.label }}  {{form.week() }}
+    <br/> {{ form.submit() }}
+    </form>     
+    <p></p>
+    <form action="http://127.0.0.1:5000/boeken/">
+        <input type="submit" value="Annuleren" />
+    </form>
+
+</div>
+
+
+
+
+</div>
+{% endblock %}

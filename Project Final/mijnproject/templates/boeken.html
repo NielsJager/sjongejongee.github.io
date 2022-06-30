@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="display-3" style="background-color:yellowgreen">Boeken</h1>
+    <p></p>
+    {% for huisje in alle_huisjes %}
+    <a href="http://127.0.0.1:5000/boeken/formulier/{{huisje.id}}" target="_blank" style="text-decoration: none;">
+    <div class="jumbotron" style="background-image: url('{{huisje.foto}}'); background-size: 100%; width:1300px; height:800px">
+        <h1 class="text-white">{{huisje.naam}}</h1>
+        <p></p>
+        <p class="text-white">{{huisje.prijs}}</p>
+        <p></p>
+        <p class="text-white">{{huisje.omschrijving}}</p>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

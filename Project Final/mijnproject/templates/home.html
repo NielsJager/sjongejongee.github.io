@@ -1,0 +1,32 @@
+{%extends "base.html"%}
+{% block content %}
+
+<body>
+    <div class="container" style="height:40px">
+        {% if current_user.is_authenticated %}
+          <p class="text-white">Welkom {{ current_user.username }}!</p>
+        {% else %}
+          <p class="text-white">Om te kunnen beginnen: log in of registreer!</p>
+        {% endif %}
+    </div>
+    <div class="container">
+        <h1 class="display-3" style="background-color:yellowgreen">Welkom bij vakantiepark Leniel</h1>
+
+        <div class="jumbotron" style="background-image: url('/static/vakantiepark_edit.jpg'); background-size: 100%; width:1300px; height:500px;"">
+            <h1 class="text-white">Het vakantiepark voor jong en oud!</h1>
+            <p></p>
+            <p class="text-white">Ben jij ook toe aan vakantie? Bij vakantiepark Leniel ben je aan het juiste adres.
+                Van grote Bungalows tot kleine Bungalows, bij vakantiepark Leniel vind je altijd het juiste huisje.</p>
+        </div>
+        <p class="text-white"; style="font-size:40px;">Wij hebben een breed aanbod aan huizen, of u een fijn huisje zoekt voor een kleine prijs of op zoek bent naar pure luxe, wij hebben wat u zoekt. </p>
+        <a href="http://127.0.0.1:5000/boeken"><img src="/static/huisje_edit.jpg" alt="Boeken" width="425" height="425"></a>
+        <a href="http://127.0.0.1:5000/ervaringen"><img src="/static/familie_edit.jpg" alt="Ervaringen" width="425" height="425"></a>
+        <a href="http://127.0.0.1:5000/overons"><img src="/static/overons_edit.jpg" alt="Over Ons" width="425" height="425"></a>
+    </div>
+</body>
+
+
+        
+    
+
+{% endblock%}
